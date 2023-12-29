@@ -1,25 +1,38 @@
-import { ChakraProvider } from '@chakra-ui/react';
-import { Route, Routes } from 'react-router-dom';
+import { Box, ChakraProvider } from '@chakra-ui/react';
+import { useState } from 'react';
 
-import { AuthProvider } from './Auth';
-import { useDependencies } from './DependeciesInjection/hooks';
-import { InfoPage } from './Info';
-import { PasswordPage, usePasswords } from './Passwords';
+import { CardsDealingPage } from './Cards/pages';
+import { GameSetupPage } from './GameSetup/pages';
+import { GameSettings } from './GameSetup/types';
+
+const initGameSettings: GameSettings = {
+  players: 0,
+  mafia: 0
+};
+type AppMode = 'setup' | 'dealing-cards';
 
 export function App() {
-  const { devAuthenticator, passwordsApi, loadingConfig } = useDependencies();
+  const [mode, setMode] = useState<AppMode>('setup');
+  const [settings, setGameSettings] = useState<GameSettings>(initGameSettings);
 
-  if (loadingConfig) return <div />;
+  const setToSetup = () => setMode('setup');
+  const setToDealing = () => setMode('dealing-cards');
 
   return (
     <ChakraProvider>
-      <AuthProvider authenticator={devAuthenticator}>
-        <Routes>
-          <Route path="/" element={<InfoPage />} />
+      <Box w="350px" p={4}>
+        {mode === 'setup' && (
+          <GameSetupPage
+            settings={settings}
+            onChange={setGameSettings}
+            onStart={setToDealing}
+          />
+        )}
 
-          <Route path="/passwords" element={<PasswordPage passwordsApi={passwordsApi} usePasswords={usePasswords} />} />
-        </Routes>
-      </AuthProvider>
+        {mode === 'dealing-cards' && (
+          <CardsDealingPage gameSettings={settings} onFinish={setToSetup} />
+        )}
+      </Box>
     </ChakraProvider>
   );
 }

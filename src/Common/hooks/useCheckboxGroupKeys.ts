@@ -6,7 +6,9 @@ export const useCheckboxGroupKeys = (options: Option[]) => {
   const [selectedKeys, setSelectedKeys] = useState<string[]>([]);
 
   const onChange = (key: string) => {
-    setSelectedKeys(prevState => (prevState.includes(key) ? prevState.filter(k => k !== key) : [...prevState, key]));
+    setSelectedKeys(prevState =>
+      prevState.includes(key) ? prevState.filter(k => k !== key) : [...prevState, key]
+    );
   };
   const onToggleAll = () => {
     setSelectedKeys(prevState => {

@@ -44,7 +44,11 @@ const columns: Column<UnitConversion>[] = [
     filterOptions: patternFilterOptions,
     getRowValue: row => row.toUnit
   },
-  { name: 'factor', title: 'Multiply by', getRowValue: row => row.factor.toString() }
+  {
+    name: 'factor',
+    title: 'Multiply by',
+    getRowValue: row => row.factor.toString()
+  }
 ];
 
 export const Default: StoryFn = () => {

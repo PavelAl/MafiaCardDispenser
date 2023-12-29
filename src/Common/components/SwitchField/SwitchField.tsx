@@ -12,12 +12,22 @@ export const SwitchField: React.FC<SwitchFieldProps> = props => {
   const { id, label, checked, onChange } = props;
 
   return (
-    <FormControl display="flex" alignItems="center" justifyContent={'space-between'} width={100}>
+    <FormControl
+      display="flex"
+      alignItems="center"
+      justifyContent={'space-between'}
+      width={100}
+    >
       <FormLabel htmlFor={id} mb="0">
         {label}
       </FormLabel>
 
-      <Switch id={id} checked={checked} onChange={e => onChange?.(e.target.checked)} />
+      <Switch
+        id={id}
+        checked={checked}
+        defaultChecked={checked}
+        onChange={e => onChange?.(e.target.checked)}
+      />
     </FormControl>
   );
 };

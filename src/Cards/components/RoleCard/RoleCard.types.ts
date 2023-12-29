@@ -1,4 +1,4 @@
-import { Role } from '~/Cards/types';
+import { Role } from '~/GameSetup/types';
 
 export interface RoleCardProps {
   role: Role;

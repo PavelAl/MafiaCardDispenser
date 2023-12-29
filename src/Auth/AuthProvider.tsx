@@ -44,5 +44,9 @@ export function AuthProvider({ authenticator, children }: AuthProviderProps) {
     setLogedIn(false);
   };
 
-  return <AuthContext.Provider value={{ token, logedIn, signIn, signOut }}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={{ token, logedIn, signIn, signOut }}>
+      {children}
+    </AuthContext.Provider>
+  );
 }

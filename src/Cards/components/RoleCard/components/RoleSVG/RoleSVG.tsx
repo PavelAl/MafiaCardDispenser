@@ -1,7 +1,7 @@
 import { Image } from '@chakra-ui/react';
 import { FC } from 'react';
 
-import { Role } from '~/Cards/types';
+import { Role } from '~/GameSetup/types';
 
 import Boss from './Boss.svg';
 import Citizen from './Citizen.svg';
@@ -16,7 +16,11 @@ type Props = {
 };
 
 export const RoleSVG: FC<Props> = ({ role }) => {
-  return !role ? <div>No such card</div> : <Image display={{ sm: 'none', md: 'unset' }} src={getRoleSVG(role)} />;
+  return !role ? (
+    <div>No such card</div>
+  ) : (
+    <Image display={{ sm: 'none', md: 'unset' }} src={getRoleSVG(role)} />
+  );
 };
 
 function getRoleSVG(role: Role) {

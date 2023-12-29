@@ -8,7 +8,11 @@ import {
 } from './tools';
 
 export class Authenticator {
-  constructor(private authUrl: string, private redirectUri: string, private api: AuthApi) {}
+  constructor(
+    private authUrl: string,
+    private redirectUri: string,
+    private api: AuthApi
+  ) {}
 
   getStoredToken = (): Promise<string | null> => {
     return this.getToken();
@@ -19,6 +23,7 @@ export class Authenticator {
 
     if (!token) {
       redirectToAuthPage(this.authUrl, this.redirectUri);
+
       return null;
     }
 

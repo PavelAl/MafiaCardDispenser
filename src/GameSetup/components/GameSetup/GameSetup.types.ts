@@ -1,4 +1,4 @@
-import { GameSettings } from '~/Cards/types';
+import { GameSettings } from '~/GameSetup/types';
 
 export interface GameSetupProps {
   settings: GameSettings;

@@ -20,7 +20,11 @@ export const CheckboxGroup: FC<CheckboxGroupProps> = props => {
       </Checkbox>
 
       {options.map(({ key, label }) => (
-        <Checkbox key={key} isChecked={selectedKeys.indexOf(key) > -1} onChange={() => onChange(key)}>
+        <Checkbox
+          key={key}
+          isChecked={selectedKeys.indexOf(key) > -1}
+          onChange={() => onChange(key)}
+        >
           {label}
         </Checkbox>
       ))}

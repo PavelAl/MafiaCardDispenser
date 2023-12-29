@@ -1,6 +1,6 @@
 import { countOccurrences } from '~/testing/utils';
 
-import { GameDeckGenerator } from './tools';
+import { GameDeckGenerator } from './GameDeckGenerator';
 
 test('Only mafia', () => {
   const generator = new GameDeckGenerator({

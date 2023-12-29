@@ -19,8 +19,22 @@ export const getColumns = (passwords: Password[]): Column<Password>[] => {
   return [
     { name: 'site', title: 'Site', getRowValue: row => row.site ?? '' },
     { name: 'login', title: 'Login', getRowValue: row => row.login ?? '' },
-    { name: 'pattern', title: 'Pattern', getRowValue: row => row.pattern ?? '', filterOptions: patternFilterOptions },
-    { name: 'length', title: 'Length', getRowValue: row => row.length?.toString() ?? '', filterOptions: lengthOptions },
-    { name: 'counter', title: 'Counter', getRowValue: row => row.counter?.toString() ?? '' }
+    {
+      name: 'pattern',
+      title: 'Pattern',
+      getRowValue: row => row.pattern ?? '',
+      filterOptions: patternFilterOptions
+    },
+    {
+      name: 'length',
+      title: 'Length',
+      getRowValue: row => row.length?.toString() ?? '',
+      filterOptions: lengthOptions
+    },
+    {
+      name: 'counter',
+      title: 'Counter',
+      getRowValue: row => row.counter?.toString() ?? ''
+    }
   ];
 };

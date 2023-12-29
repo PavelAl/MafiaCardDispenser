@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { FC, useState } from 'react';
 
-import { GameSettings } from '~/Cards/types';
+import { GameSettings } from '~/GameSetup/types';
 
 import { GameSetup } from './GameSetup';
 

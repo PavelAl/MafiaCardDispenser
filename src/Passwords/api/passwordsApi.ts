@@ -26,7 +26,10 @@ export class PasswordsApi {
 
     const response = await fetch(this.passwordsUrl, {
       method: 'GET',
-      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` }
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`
+      }
     });
 
     const passwords = await response.json();
@@ -39,7 +42,10 @@ export class PasswordsApi {
 
     await fetch(this.passwordsUrl, {
       method: 'PUT',
-      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`
+      },
       body: passwordsJSON
     });
   };

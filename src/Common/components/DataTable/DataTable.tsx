@@ -23,7 +23,10 @@ export function DataTable<Data extends object>(props: DataTableProps<Data>) {
                 key={column.name}
                 column={column}
                 onFilterChange={selectedKeys =>
-                  setFilterSettings(prevState => ({ ...prevState, [column.name]: selectedKeys }))
+                  setFilterSettings(prevState => ({
+                    ...prevState,
+                    [column.name]: selectedKeys
+                  }))
                 }
               />
             ))}

@@ -1,7 +1,8 @@
-import { shuffleArray } from '~/utils/shufleArray';
+import { cardsPool } from '../consts';
+import { Card, CardsPool } from '../types';
 
-import { cardsPool } from './consts';
-import { Card, CardsPool, GameSettings } from './types';
+import { GameSettings } from '~/GameSetup/types';
+import { shuffleArray } from '~/utils/shufleArray';
 
 export class GameDeckGenerator {
   private deck: Card[] = [];

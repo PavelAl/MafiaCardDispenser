@@ -1,5 +1,9 @@
 export class AuthApi {
-  constructor(private clientId: string, private redirectUri: string, private authUrl: string) {}
+  constructor(
+    private clientId: string,
+    private redirectUri: string,
+    private authUrl: string
+  ) {}
 
   exchangeCode = async (code: string | null): Promise<string | null> => {
     if (!code) return null;

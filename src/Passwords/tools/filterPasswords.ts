@@ -9,13 +9,17 @@ export function filterPasswords(passwords: Password[], filterSettings: FilterSet
     for (const k of filterKeys) {
       switch (k) {
         case 'length':
-          if (filterSettings['length'].length > 0 && !filterSettings['length'].includes(pass.length?.toString() ?? ''))
+          if (
+            filterSettings['length'].length > 0 &&
+            !filterSettings['length'].includes(pass.length?.toString() ?? '')
+          )
             return false;
           break;
         case 'pattern':
           if (
             filterSettings['pattern'].length > 0 &&
-            filterSettings['pattern'].filter(pattern => pass.pattern?.includes(pattern)).length === 0
+            filterSettings['pattern'].filter(pattern => pass.pattern?.includes(pattern)).length ===
+              0
           )
             return false;
           break;

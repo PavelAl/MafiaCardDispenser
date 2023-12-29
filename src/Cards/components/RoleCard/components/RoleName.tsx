@@ -1,7 +1,7 @@
 import { Text } from '@chakra-ui/react';
 import React from 'react';
 
-import { Role } from '~/Cards/types';
+import { Role } from '~/GameSetup/types';
 
 interface RoleNameProps {
   role: Role;

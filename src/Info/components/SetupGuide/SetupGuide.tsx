@@ -18,7 +18,9 @@ export const SetupGuide: React.FC = () => {
       justifyContent={'space-between'}
     >
       {root.setupGuide.steps.map(({ name, ...step }) => {
-        return <LearningBlock key={name} icon={iconsMap[name as keyof typeof iconsMap]} {...step} />;
+        return (
+          <LearningBlock key={name} icon={iconsMap[name as keyof typeof iconsMap]} {...step} />
+        );
       })}
     </Flex>
   );
