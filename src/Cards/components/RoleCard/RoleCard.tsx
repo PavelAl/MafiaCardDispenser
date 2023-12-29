@@ -8,8 +8,8 @@ export const RoleCard: FC<RoleCardProps> = props => {
   const { role } = props;
 
   return (
-    <Card maxW="sm">
-      <RoleImage role={role} />
-    </Card>
+    // <Card maxW="sm">
+    <RoleImage role={role} />
+    // {/* </Card> */}
   );
 };

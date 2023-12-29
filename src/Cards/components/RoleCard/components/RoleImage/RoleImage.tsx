@@ -16,7 +16,7 @@ type Props = {
 };
 
 export const RoleImage: FC<Props> = ({ role }) => {
-  return !role ? <div>No such card</div> : <Image height={444} src={getRoleSVG(role)} />;
+  return !role ? <div>No such card</div> : <Image src={getRoleSVG(role)} />;
 };
 
 function getRoleSVG(role: Role) {

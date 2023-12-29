@@ -20,7 +20,7 @@ export function App() {
 
   return (
     <ChakraProvider>
-      <Box w="350px" p={4}>
+      <Box w="350px" margin={'auto'}>
         {mode === 'setup' && (
           <GameSetupPage
             settings={settings}
