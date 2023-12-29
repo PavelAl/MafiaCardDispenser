@@ -17,11 +17,7 @@ export const GameSetupPage: FC<GameSetupPageProps> = props => {
     <Stack gap={10} alignItems="center">
       <GameSetup settings={settings} onChange={onChange} />
 
-      <Button
-        colorScheme={'blue'}
-        isDisabled={settings.players === 0}
-        onClick={onStart}
-      >
+      <Button colorScheme={'blue'} isDisabled={settings.players === 0} onClick={onStart}>
         Start
       </Button>
     </Stack>

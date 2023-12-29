@@ -14,10 +14,7 @@ export const CardsDealingPage: FC<CardsDealingPageProps> = props => {
   const { gameSettings, onFinish } = props;
 
   const deck = useMemo(
-    () =>
-      new GameDeckGenerator(gameSettings)
-        .createGameDeck()
-        .map(({ role }) => role),
+    () => new GameDeckGenerator(gameSettings).createGameDeck().map(({ role }) => role),
     [gameSettings]
   );
 

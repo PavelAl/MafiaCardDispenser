@@ -20,13 +20,9 @@ export function App() {
 
   return (
     <ChakraProvider>
-      <Box w="350px" margin={'auto'}>
+      <Box padding={'20px 10px'} maxWidth={430} margin={'auto'}>
         {mode === 'setup' && (
-          <GameSetupPage
-            settings={settings}
-            onChange={setGameSettings}
-            onStart={setToDealing}
-          />
+          <GameSetupPage settings={settings} onChange={setGameSettings} onStart={setToDealing} />
         )}
 
         {mode === 'dealing-cards' && (
