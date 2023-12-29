@@ -25,7 +25,7 @@ test('Mafia and sherif', () => {
   expect(deckTitles.length).toEqual(10);
   expect(countOccurrences(deckTitles, 'Citizen')).toEqual(6);
   expect(countOccurrences(deckTitles, 'Mafia')).toEqual(3);
-  expect(countOccurrences(deckTitles, 'Sherif')).toEqual(1);
+  expect(countOccurrences(deckTitles, 'Sheriff')).toEqual(1);
 });
 
 test('All roles', () => {
@@ -41,9 +41,9 @@ test('All roles', () => {
   const deckTitles = generator.createGameDeck().map(({ name }) => name);
 
   expect(deckTitles.length).toEqual(16);
-  expect(countOccurrences(deckTitles, 'Citizen')).toEqual(16 - 7);
+  expect(countOccurrences(deckTitles, 'Citizen')).toEqual(16 - 8);
   expect(countOccurrences(deckTitles, 'Mafia')).toEqual(3);
-  expect(countOccurrences(deckTitles, 'Sherif')).toEqual(1);
+  expect(countOccurrences(deckTitles, 'Sheriff')).toEqual(1);
   expect(countOccurrences(deckTitles, 'Boss')).toEqual(1);
   expect(countOccurrences(deckTitles, 'Maniac')).toEqual(1);
   expect(countOccurrences(deckTitles, 'Putana')).toEqual(1);

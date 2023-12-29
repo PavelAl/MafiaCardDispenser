@@ -20,7 +20,13 @@ export class GameDeckGenerator {
     this.addDoctor();
     this.fillRestWithCitizens();
 
-    return shuffleArray(this.deck);
+    let result = shuffleArray(this.deck);
+    result = shuffleArray(this.deck);
+    result = shuffleArray(this.deck);
+    result = shuffleArray(this.deck);
+    result = shuffleArray(this.deck);
+
+    return result;
   }
 
   private addMafia() {
