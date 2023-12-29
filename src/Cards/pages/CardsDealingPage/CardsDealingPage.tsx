@@ -14,7 +14,10 @@ export const CardsDealingPage: FC<CardsDealingPageProps> = props => {
   const { gameSettings, onFinish } = props;
 
   const deck = useMemo(
-    () => new GameDeckGenerator(gameSettings).createGameDeck().map(({ role }) => role),
+    () =>
+      new GameDeckGenerator(gameSettings)
+        .createGameDeck()
+        .map(({ role }) => role),
     [gameSettings]
   );
 
@@ -31,7 +34,7 @@ export const CardsDealingPage: FC<CardsDealingPageProps> = props => {
   };
 
   return (
-    <Stack gap={10}>
+    <Stack gap={10} height={620} justifyContent={'space-between'}>
       <RoleCard role={deck[currentIndex]} />
 
       <HStack justifyContent={'space-between'}>

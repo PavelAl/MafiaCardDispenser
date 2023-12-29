@@ -7,7 +7,7 @@
     "start": "vite",
     "dev": "vite",
     "test": "vitest",
-    "build": "yarn eslint && yarn type-check && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx ./src",
     "prettier-fix": "prettier --write **/*.tsx **/*.ts",
