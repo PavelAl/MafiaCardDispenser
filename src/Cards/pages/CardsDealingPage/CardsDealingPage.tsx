@@ -1,5 +1,6 @@
 import { Button, HStack, Stack, Text } from '@chakra-ui/react';
 import { FC, useMemo, useState } from 'react';
+import { Carousel } from 'react-responsive-carousel';
 
 import { RoleCard } from '~/Cards/components';
 import { GameDeckGenerator } from '~/Cards/tools';
@@ -32,7 +33,17 @@ export const CardsDealingPage: FC<CardsDealingPageProps> = props => {
 
   return (
     <Stack gap={10} height={620} justifyContent={'space-between'}>
-      <RoleCard role={deck[currentIndex]} />
+      <Carousel
+        selectedItem={currentIndex}
+        showArrows={false}
+        showThumbs={false}
+        showIndicators={false}
+        showStatus={false}
+      >
+        {deck.map((card, index) => (
+          <RoleCard key={index} role={card} />
+        ))}
+      </Carousel>
 
       <HStack justifyContent={'space-between'}>
         {isFirstCard ? (
