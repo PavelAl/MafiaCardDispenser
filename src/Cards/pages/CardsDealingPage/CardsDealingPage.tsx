@@ -1,10 +1,11 @@
-import { Button, HStack, Stack, Text } from '@chakra-ui/react';
-import { FC, useMemo, useState } from 'react';
-import { Carousel } from 'react-responsive-carousel';
+import { Stack } from '@chakra-ui/react';
+import { FC, useMemo } from 'react';
 
-import { RoleCard } from '~/Cards/components';
 import { GameDeckGenerator } from '~/Cards/tools';
 import { GameSettings } from '~/GameSetup/types';
+
+import { CardsDealingToolbar, CardsPresenter } from './components';
+import { useDealingFlow } from './hooks';
 
 export interface CardsDealingPageProps {
   gameSettings: GameSettings;
@@ -14,60 +15,28 @@ export interface CardsDealingPageProps {
 export const CardsDealingPage: FC<CardsDealingPageProps> = props => {
   const { gameSettings, onFinish } = props;
 
-  const deck = useMemo(
+  const roles = useMemo(
     () => new GameDeckGenerator(gameSettings).createGameDeck().map(({ role }) => role),
     [gameSettings]
   );
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const increment = () => setCurrentIndex(currentIndex + 1);
-  const decrement = () => setCurrentIndex(currentIndex - 1);
+  const maxIndex = roles.length;
 
-  const isFirstCard = currentIndex === 0;
-  const isLastCard = currentIndex === deck.length - 1;
-
-  const hanldeFinish = () => {
-    setCurrentIndex(0);
-    onFinish?.();
-  };
+  const { currentIndex, isFirstCard, isLastCard, increment, decrement, handleFinish } =
+    useDealingFlow(maxIndex, onFinish);
 
   return (
     <Stack gap={10} height={620} justifyContent={'space-between'}>
-      <Carousel
-        selectedItem={currentIndex}
-        showArrows={false}
-        showThumbs={false}
-        showIndicators={false}
-        showStatus={false}
-      >
-        {deck.map((card, index) => (
-          <RoleCard key={index} role={card} />
-        ))}
-      </Carousel>
+      <CardsPresenter currentIndex={currentIndex} roles={roles} />
 
-      <HStack justifyContent={'space-between'}>
-        {isFirstCard ? (
-          <div style={{ width: 64 }} />
-        ) : (
-          <Button colorScheme={'blue'} onClick={decrement}>
-            Prev
-          </Button>
-        )}
-
-        <Text fontSize="1xl" fontWeight={600} align={'center'}>
-          Player {currentIndex + 1}
-        </Text>
-
-        {isLastCard ? (
-          <Button colorScheme={'blue'} onClick={hanldeFinish}>
-            Finish
-          </Button>
-        ) : (
-          <Button colorScheme={'blue'} onClick={increment}>
-            Next
-          </Button>
-        )}
-      </HStack>
+      <CardsDealingToolbar
+        currentIndex={currentIndex}
+        isFirstCard={isFirstCard}
+        isLastCard={isLastCard}
+        onGoNext={increment}
+        onGoPrev={decrement}
+        onFinish={handleFinish}
+      />
     </Stack>
   );
 };

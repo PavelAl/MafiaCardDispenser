@@ -28,6 +28,35 @@ test('Mafia and sherif', () => {
   expect(countOccurrences(deckTitles, 'Sheriff')).toEqual(1);
 });
 
+test('shuffle', () => {
+  const generator = new GameDeckGenerator({
+    players: 16,
+    mafia: 3,
+    sheriff: true,
+    boss: true,
+    doctor: true,
+    maniac: true,
+    putana: true
+  });
+
+  const deck1 = generator.createGameDeck();
+  const deck2 = generator.createGameDeckLotShuffle();
+  const deck3 = generator.createGameDeckLotShuffle();
+  const deck4 = generator.createGameDeckLotShuffle();
+  const deck5 = generator.createGameDeckLotShuffle();
+
+  const combinedArray = deck1.map((item, index) => ({
+    value1: item.role,
+    value2: deck2[index].role,
+    value3: deck3[index].role,
+    value4: deck4[index].role,
+    value5: deck5[index].role
+  }));
+
+  // eslint-disable-next-line no-console
+  console.table(combinedArray);
+});
+
 test('All roles', () => {
   const generator = new GameDeckGenerator({
     players: 16,
