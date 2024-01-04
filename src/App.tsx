@@ -23,7 +23,7 @@ export function App() {
 
   return (
     <ChakraProvider>
-      <Box padding={'20px 0'} maxWidth={430} margin={'auto'}>
+      <Box padding={'20px 0'} maxWidth={430} margin={'auto'} height={'100vh'}>
         {mode === 'setup' && (
           <GameSetupPage
             settings={settings}

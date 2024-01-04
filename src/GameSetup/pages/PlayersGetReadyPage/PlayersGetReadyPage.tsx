@@ -9,7 +9,7 @@ export const PlayersGetReadyPage: FC<PlayersGetReadyPageProps> = props => {
   const { onStart } = props;
 
   return (
-    <Stack gap={10} alignItems="center">
+    <Stack gap={10} alignItems="center" justifyContent={'space-between'} padding={4} height={500}>
       <Text fontSize="6xl" fontWeight={600} align={'center'}>
         The city falls asleep
       </Text>
