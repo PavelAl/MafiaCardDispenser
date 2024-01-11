@@ -15,10 +15,11 @@ export interface CardsDealingPageProps {
 export const CardsDealingPage: FC<CardsDealingPageProps> = props => {
   const { gameSettings, onFinish } = props;
 
-  const roles = useMemo(
-    () => new GameDeckGenerator(gameSettings).createGameDeck().map(({ role }) => role),
-    [gameSettings]
-  );
+  const roles = useMemo(() => {
+    const result = new GameDeckGenerator(gameSettings).createGameDeck().map(({ role }) => role);
+
+    return result;
+  }, [gameSettings]);
 
   const maxIndex = roles.length;
 

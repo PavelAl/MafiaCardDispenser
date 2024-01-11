@@ -26,7 +26,7 @@ export class GameDeckGenerator {
   private shuffleDeck = () => {
     let result = shuffleArray(this.deck);
 
-    for (let i = 0; i < 1000; i++) {
+    for (let i = 0; i < 100; i++) {
       result = shuffleArray(result);
     }
 

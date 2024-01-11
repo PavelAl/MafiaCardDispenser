@@ -1,43 +1,16 @@
-import { Box, ChakraProvider } from '@chakra-ui/react';
-import { useState } from 'react';
+import { Box } from '@chakra-ui/react';
+import { Routes, Route } from 'react-router-dom';
 
-import { CardsDealingPage } from './Cards/pages';
-import { GameSetupPage } from './GameSetup/pages';
-import { PlayersGetReadyPage } from './GameSetup/pages/PlayersGetReadyPage';
-import { GameSettings } from './GameSetup/types';
-
-type AppMode = 'setup' | 'players-get-ready' | 'dealing-cards';
-
-const initGameSettings: GameSettings = {
-  players: 8,
-  mafia: 2
-};
+import { MainPage, CardsPage } from './App/pages';
 
 export function App() {
-  const [mode, setMode] = useState<AppMode>('setup');
-  const [settings, setGameSettings] = useState<GameSettings>(initGameSettings);
-
-  const setToSetup = () => setMode('setup');
-  const setToPlayesGetReady = () => setMode('players-get-ready');
-  const setToDealing = () => setMode('dealing-cards');
-
   return (
-    <ChakraProvider>
-      <Box padding={'20px 0'} maxWidth={430} margin={'auto'} height={'100vh'}>
-        {mode === 'setup' && (
-          <GameSetupPage
-            settings={settings}
-            onChange={setGameSettings}
-            onStart={setToPlayesGetReady}
-          />
-        )}
+    <Box padding={'20px 0'} maxWidth={430} margin={'auto'}>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
 
-        {mode === 'players-get-ready' && <PlayersGetReadyPage onStart={setToDealing} />}
-
-        {mode === 'dealing-cards' && (
-          <CardsDealingPage gameSettings={settings} onFinish={setToSetup} />
-        )}
-      </Box>
-    </ChakraProvider>
+        <Route path="/cards" element={<CardsPage />} />
+      </Routes>
+    </Box>
   );
 }

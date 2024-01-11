@@ -13,10 +13,15 @@ import Sheriff from './Sheriff.jpg';
 
 type Props = {
   role: Role;
+  onClick?: () => void;
 };
 
-export const RoleImage: FC<Props> = ({ role }) => {
-  return !role ? <div>No such card</div> : <Image src={getRoleSVG(role)} alt={'Loading...'} />;
+export const RoleImage: FC<Props> = ({ role, onClick }) => {
+  return !role ? (
+    <div>No such card</div>
+  ) : (
+    <Image src={getRoleSVG(role)} alt={'Loading...'} onClick={onClick} />
+  );
 };
 
 function getRoleSVG(role: Role) {
