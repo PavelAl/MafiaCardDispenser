@@ -1,4 +1,4 @@
-import { Box, Stack } from '@chakra-ui/react';
+import { Stack } from '@chakra-ui/react';
 import { FC } from 'react';
 import { useSearchParams } from 'react-router-dom';
 

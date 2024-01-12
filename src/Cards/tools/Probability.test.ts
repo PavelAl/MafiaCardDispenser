@@ -14,7 +14,7 @@ test('shuffle', () => {
     sheriff: true,
     boss: true,
     doctor: true,
-    maniac: false,
+    maniac: true,
     putana: true
   };
 
