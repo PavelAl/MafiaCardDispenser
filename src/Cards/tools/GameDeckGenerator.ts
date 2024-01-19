@@ -2,7 +2,9 @@ import { cardsPool } from '../consts';
 import { Card, CardsPool } from '../types';
 
 import { GameSettings } from '~/GameSetup/types';
-import { shuffleArray } from '~/utils/shufleArray';
+import { randomShuffleArray, shuffleArray } from '~/utils/shufleArray';
+
+import { checkThatMafiaSitsToClose } from './statistics/qualityCheck';
 
 export class GameDeckGenerator {
   private deck: Card[] = [];
@@ -23,11 +25,23 @@ export class GameDeckGenerator {
     return this.shuffleDeck();
   }
 
-  private shuffleDeck = () => {
+  private shuffleDeck = (tryToShuffle = 0): Card[] => {
     let result = shuffleArray(this.deck);
+
+    if (tryToShuffle === 2) {
+      return result;
+    }
 
     for (let i = 0; i < 100; i++) {
       result = shuffleArray(result);
+    }
+
+    const allMafiaSitTogether = checkThatMafiaSitsToClose(result, this.gameSettings);
+
+    if (allMafiaSitTogether) {
+      this.deck = result;
+
+      return this.shuffleDeck(tryToShuffle + 1);
     }
 
     return result;
