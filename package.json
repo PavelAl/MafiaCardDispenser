@@ -10,6 +10,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx ./src",
+    "eslint-fix": "eslint --fix --ext .js,.jsx,.ts,.tsx ./src",
     "prettier-fix": "prettier --write **/*.tsx **/*.ts",
     "type-check": "tsc -p tsconfig.json",
     "storybook": "storybook dev -p 6006",

@@ -1,7 +1,4 @@
-import { Card } from '../types';
-
-import { Role } from '~/GameSetup/types';
-import { countOccurrences } from '~/testing/utils';
+import { countOccurrences } from '~/Common/testing';
 
 import { GameDeckGenerator } from './GameDeckGenerator';
 

@@ -1,24 +1,9 @@
-import { Card } from '@chakra-ui/react';
-
 import { GameDeckGenerator } from '../GameDeckGenerator';
 
+import { Card } from '~/Cards/types';
 import { Role, GameSettings } from '~/GameSetup';
 
 export type Statistic = Record<Role, number>;
-
-export function generateStatistic(
-  gameSettings: GameSettings,
-  numberOfGames: number,
-  tryies: number
-) {
-  for (let i = 0; i < tryies; i++) {
-    const citizens = simulateNumberOfGames(gameSettings, numberOfGames);
-
-    for (const citizen of citizens) {
-      citizenChances[citizen] = (citizenChances[citizen] ?? 0) + 1;
-    }
-  }
-}
 
 export function simulateNumberOfGames(gameSettings: GameSettings, numberOfGames: number) {
   const generator = new GameDeckGenerator(gameSettings);

@@ -1,4 +1,4 @@
-import { Box, Stack } from '@chakra-ui/react';
+import { Stack } from '@chakra-ui/react';
 import { useState } from 'react';
 
 import { CardsDealingPage } from '~/Cards/pages';

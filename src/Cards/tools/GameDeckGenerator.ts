@@ -1,8 +1,8 @@
 import { cardsPool } from '../consts';
 import { Card, CardsPool } from '../types';
 
+import { shuffleArray } from '~/Common/tools';
 import { GameSettings } from '~/GameSetup/types';
-import { randomShuffleArray, shuffleArray } from '~/utils/shufleArray';
 
 import { checkThatMafiaSitsToClose } from './statistics/qualityCheck';
 
