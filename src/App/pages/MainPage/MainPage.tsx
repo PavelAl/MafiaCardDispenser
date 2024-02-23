@@ -19,7 +19,7 @@ export function MainPage() {
   const [settings, setGameSettings] = useState<GameSettings>(initGameSettings);
 
   const setToSetup = () => setMode('setup');
-  const setToPlayesGetReady = () => setMode('players-get-ready');
+  const setToPlayersGetReady = () => setMode('players-get-ready');
   const setToDealing = () => setMode('dealing-cards');
 
   return (
@@ -30,7 +30,7 @@ export function MainPage() {
         <GameSetupPage
           settings={settings}
           onChange={setGameSettings}
-          onStart={setToPlayesGetReady}
+          onStart={setToPlayersGetReady}
         />
       )}
 

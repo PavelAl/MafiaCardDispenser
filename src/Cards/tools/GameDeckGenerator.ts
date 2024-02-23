@@ -20,6 +20,8 @@ export class GameDeckGenerator {
     this.addManiac();
     this.addPutana();
     this.addDoctor();
+    this.addPsycho();
+    this.addGambler();
     this.fillRestWithCitizens();
 
     return this.shuffleDeck();
@@ -83,10 +85,22 @@ export class GameDeckGenerator {
     }
   }
 
-  private fillRestWithCitizens() {
-    const requredCitizens = this.gameSettings.players - this.deck.length;
+  private addPsycho() {
+    if (this.gameSettings.gambler) {
+      this.addRoleToDeck('gambler');
+    }
+  }
 
-    for (let i = 0; i < requredCitizens; i++) {
+  private addGambler() {
+    if (this.gameSettings.psycho) {
+      this.addRoleToDeck('psycho');
+    }
+  }
+
+  private fillRestWithCitizens() {
+    const requiredCitizens = this.gameSettings.players - this.deck.length;
+
+    for (let i = 0; i < requiredCitizens; i++) {
       this.addRoleToDeck('citizen');
     }
   }

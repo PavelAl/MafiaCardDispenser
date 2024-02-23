@@ -58,6 +58,20 @@ export const GameSetup: FC<GameSetupProps> = props => {
         checked={settings.putana}
         onChange={value => onChange({ ...settings, putana: value })}
       />
+
+      <SwitchField
+        id={'gambler'}
+        label={'Шулер'}
+        checked={settings.gambler}
+        onChange={value => onChange({ ...settings, gambler: value })}
+      />
+
+      <SwitchField
+        id={'psycho'}
+        label={'Псих'}
+        checked={settings.psycho}
+        onChange={value => onChange({ ...settings, psycho: value })}
+      />
     </Stack>
   );
 };

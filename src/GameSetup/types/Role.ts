@@ -1,4 +1,13 @@
-export type Role = 'citizen' | 'mafia' | 'sheriff' | 'boss' | 'maniac' | 'putana' | 'doctor';
+export type Role =
+  | 'citizen'
+  | 'mafia'
+  | 'sheriff'
+  | 'boss'
+  | 'maniac'
+  | 'putana'
+  | 'doctor'
+  | 'gambler'
+  | 'psycho';
 
 export const rolesList: Role[] = [
   'citizen',

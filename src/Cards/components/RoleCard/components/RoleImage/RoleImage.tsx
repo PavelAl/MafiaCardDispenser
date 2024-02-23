@@ -6,8 +6,10 @@ import { Role } from '~/GameSetup/types';
 import Boss from './Boss.jpg';
 import Citizen from './Citizen.jpg';
 import Doctor from './Doctor.jpg';
+import Gambler from './Gambler.jpg';
 import Mafia from './Mafia.jpg';
 import Maniac from './Maniac.jpg';
+import Psycho from './Psycho.jpg';
 import Putana from './Putana.jpg';
 import Sheriff from './Sheriff.jpg';
 
@@ -40,5 +42,9 @@ function getRoleSVG(role: Role) {
       return Maniac;
     case 'putana':
       return Putana;
+    case 'psycho':
+      return Psycho;
+    case 'gambler':
+      return Gambler;
   }
 }

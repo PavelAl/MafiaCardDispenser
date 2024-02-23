@@ -14,7 +14,17 @@ export default {
   argTypes: {
     role: {
       control: 'radio',
-      options: ['citizen', 'mafia', 'sheriff', 'boss', 'maniac', 'putana', 'doctor']
+      options: [
+        'citizen',
+        'mafia',
+        'sheriff',
+        'boss',
+        'maniac',
+        'putana',
+        'doctor',
+        'gambler',
+        'psycho'
+      ]
     }
   }
 } as Meta<Args>;

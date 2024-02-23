@@ -7,5 +7,7 @@ export const cardsPool: CardsPool = {
   boss: { name: 'Boss', role: 'boss' },
   maniac: { name: 'Maniac', role: 'maniac' },
   putana: { name: 'Putana', role: 'putana' },
-  doctor: { name: 'Doctor', role: 'doctor' }
+  doctor: { name: 'Doctor', role: 'doctor' },
+  psycho: { name: 'Psycho', role: 'psycho' },
+  gambler: { name: 'Gambler', role: 'gambler' }
 };

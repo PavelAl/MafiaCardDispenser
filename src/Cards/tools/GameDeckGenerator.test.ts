@@ -36,16 +36,20 @@ test('All roles', () => {
     boss: true,
     doctor: true,
     maniac: true,
-    putana: true
+    putana: true,
+    gambler: true,
+    psycho: true
   });
   const deckTitles = generator.createGameDeck().map(({ name }) => name);
 
   expect(deckTitles.length).toEqual(16);
-  expect(countOccurrences(deckTitles, 'Citizen')).toEqual(16 - 8);
+  expect(countOccurrences(deckTitles, 'Citizen')).toEqual(16 - 10);
   expect(countOccurrences(deckTitles, 'Mafia')).toEqual(3);
   expect(countOccurrences(deckTitles, 'Sheriff')).toEqual(1);
   expect(countOccurrences(deckTitles, 'Boss')).toEqual(1);
   expect(countOccurrences(deckTitles, 'Maniac')).toEqual(1);
   expect(countOccurrences(deckTitles, 'Putana')).toEqual(1);
   expect(countOccurrences(deckTitles, 'Doctor')).toEqual(1);
+  expect(countOccurrences(deckTitles, 'Psycho')).toEqual(1);
+  expect(countOccurrences(deckTitles, 'Gambler')).toEqual(1);
 });
