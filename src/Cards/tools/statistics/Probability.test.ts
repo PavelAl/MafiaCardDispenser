@@ -3,7 +3,7 @@ import { GameDeckGenerator } from '../GameDeckGenerator';
 
 import { GameSettings } from '~/GameSetup/types';
 
-import { checkThatMafiaSitsToClose } from './qualityCheck';
+import { checkThatCitizensSitsToClose, checkThatMafiaSitsToClose } from './qualityCheck';
 import { simulateNumberOfGames } from './tools';
 
 test('all mafia sit together', () => {
@@ -19,19 +19,23 @@ test('all mafia sit together', () => {
 
   const generator = new GameDeckGenerator(gameSettings);
 
-  let accurances = 0;
+  let mafiaAccuracies = 0;
+  let citizensAccuracies = 0;
 
-  const tryes = 10000;
+  const tries = 10000;
 
-  for (let i = 0; i < tryes; i++) {
+  for (let i = 0; i < tries; i++) {
     const gameDeck = generator.createGameDeck();
 
     const allMafiaSitTogether = checkThatMafiaSitsToClose(gameDeck, gameSettings);
+    const citizensSitClose = checkThatCitizensSitsToClose(gameDeck, gameSettings);
 
-    accurances = allMafiaSitTogether ? accurances + 1 : accurances;
+    mafiaAccuracies = allMafiaSitTogether ? mafiaAccuracies + 1 : mafiaAccuracies;
+    citizensAccuracies = citizensSitClose ? citizensAccuracies + 1 : citizensAccuracies;
   }
 
-  console.log('Chance for mafia sits together', ((accurances / tryes) * 100).toFixed(2));
+  console.log('Chance for mafia sits together', ((mafiaAccuracies / tries) * 100).toFixed(2));
+  console.log('Chance for citizens sits together', ((citizensAccuracies / tries) * 100).toFixed(2));
 });
 
 test('shuffle', () => {

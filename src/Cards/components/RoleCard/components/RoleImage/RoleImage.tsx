@@ -3,16 +3,21 @@ import { FC } from 'react';
 
 import { Role } from '~/GameSetup/types';
 
+import Advocate from './Advocate.jpg';
+import Amur from './Amur.jpg';
 import Boss from './Boss.jpg';
 import Citizen from './Citizen.jpg';
+import Detective from './Detective.jpg';
 import Doctor from './Doctor.jpg';
-import Gambler from './Gambler.jpg';
+import Hypnotizer from './Hypnotizer.jpg';
+import Journalist from './Journalist.jpg';
+import LuckyGuy from './LuckyGuy.jpg';
 import Mafia from './Mafia.jpg';
 import Maniac from './Maniac.jpg';
 import Psycho from './Psycho.jpg';
 import Putana from './Putana.jpg';
 import Sheriff from './Sheriff.jpg';
-
+import Widow from './Widow.jpg';
 type Props = {
   role: Role;
   onClick?: () => void;
@@ -42,9 +47,21 @@ function getRoleSVG(role: Role) {
       return Maniac;
     case 'putana':
       return Putana;
+    case 'widow':
+      return Widow;
     case 'psycho':
       return Psycho;
-    case 'gambler':
-      return Gambler;
+    case 'advocate':
+      return Advocate;
+    case 'luckyGuy':
+      return LuckyGuy;
+    case 'journalist':
+      return Journalist;
+    case 'hypnotizer':
+      return Hypnotizer;
+    case 'detective':
+      return Detective;
+    case 'amur':
+      return Amur;
   }
 }

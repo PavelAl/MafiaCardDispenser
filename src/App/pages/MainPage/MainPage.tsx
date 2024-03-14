@@ -1,9 +1,9 @@
-import { Stack } from '@chakra-ui/react';
+import { Button, Stack } from '@chakra-ui/react';
 import { useState } from 'react';
 
-import { CardsDealingPage } from '~/Cards/pages';
-import { GameSetupPage, PlayersGetReadyPage } from '~/GameSetup/pages';
-import { GameSettings } from '~/GameSetup/types';
+import { CardsDealingModule } from '~/Cards/modules';
+import { PlayersGetReadyModule } from '~/Game/module';
+import { GameSettings, GameSetup } from '~/GameSetup';
 
 import { MainPageNavigation } from './MainPageNavigation';
 
@@ -27,17 +27,19 @@ export function MainPage() {
       {mode === 'setup' && <MainPageNavigation />}
 
       {mode === 'setup' && (
-        <GameSetupPage
-          settings={settings}
-          onChange={setGameSettings}
-          onStart={setToPlayersGetReady}
-        />
+        <Stack spacing={8} alignItems={'center'}>
+          <GameSetup settings={settings} canEditPlayers={true} onChange={setGameSettings} />
+
+          <Button colorScheme="blue" onClick={setToPlayersGetReady}>
+            Готово
+          </Button>
+        </Stack>
       )}
 
-      {mode === 'players-get-ready' && <PlayersGetReadyPage onStart={setToDealing} />}
+      {mode === 'players-get-ready' && <PlayersGetReadyModule onStart={setToDealing} />}
 
       {mode === 'dealing-cards' && (
-        <CardsDealingPage gameSettings={settings} onFinish={setToSetup} />
+        <CardsDealingModule gameSettings={settings} onFinish={setToSetup} />
       )}
     </Stack>
   );

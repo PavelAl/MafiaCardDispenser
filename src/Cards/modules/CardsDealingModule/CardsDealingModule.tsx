@@ -7,12 +7,12 @@ import { GameSettings } from '~/GameSetup/types';
 import { CardsDealingToolbar, CardsPresenter } from './components';
 import { useDealingFlow } from './hooks';
 
-export interface CardsDealingPageProps {
+export interface CardsDealingModuleProps {
   gameSettings: GameSettings;
   onFinish?: () => void;
 }
 
-export const CardsDealingPage: FC<CardsDealingPageProps> = props => {
+export const CardsDealingModule: FC<CardsDealingModuleProps> = props => {
   const { gameSettings, onFinish } = props;
 
   const roles = useMemo(() => {

@@ -5,7 +5,7 @@ import { Role, rolesDescriptions } from '~/GameSetup';
 import { RolePreview } from './RolePreview';
 
 export default {
-  title: 'RolePreview',
+  title: 'Cards/RolePreview',
   component: ({ role }) => (
     <div style={{ width: 270 }}>
       <RolePreview {...rolesDescriptions[role]} />

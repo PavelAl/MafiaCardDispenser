@@ -1,10 +1,10 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import { CardsDealingPage, CardsDealingPageProps } from './CardsDealingPage';
+import { CardsDealingModule, CardsDealingModuleProps } from './CardsDealingModule';
 
 export default {
-  title: 'CardsDealingPage',
-  component: CardsDealingPage,
+  title: 'Cards/CardsDealingModule',
+  component: CardsDealingModule,
   args: {
     gameSettings: {
       players: 16,
@@ -16,7 +16,7 @@ export default {
       putana: true
     }
   }
-} as Meta<CardsDealingPageProps>;
+} as Meta<CardsDealingModuleProps>;
 
 interface Args {}
 

@@ -1,11 +1,11 @@
 import { Button, Stack, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 
-export interface PlayersGetReadyPageProps {
+export interface PlayersGetReadyModuleProps {
   onStart?: () => void;
 }
 
-export const PlayersGetReadyPage: FC<PlayersGetReadyPageProps> = props => {
+export const PlayersGetReadyModule: FC<PlayersGetReadyModuleProps> = props => {
   const { onStart } = props;
 
   return (

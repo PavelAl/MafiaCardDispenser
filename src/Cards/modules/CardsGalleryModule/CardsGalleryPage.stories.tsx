@@ -5,7 +5,7 @@ import { Role } from '~/GameSetup';
 import { CardsGalleryPage } from './CardsGalleryPage';
 
 export default {
-  title: 'CardsGalleryPage',
+  title: 'Cards/CardsGalleryPage',
   component: CardsGalleryPage,
   args: {},
   argTypes: {

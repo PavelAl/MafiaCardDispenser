@@ -30,26 +30,38 @@ test('Mafia and sherif', () => {
 
 test('All roles', () => {
   const generator = new GameDeckGenerator({
-    players: 16,
+    players: 20,
     mafia: 3,
     sheriff: true,
     boss: true,
     doctor: true,
     maniac: true,
     putana: true,
-    gambler: true,
-    psycho: true
+    widow: true,
+    psycho: true,
+    advocate: true,
+    luckyGuy: true,
+    journalist: true,
+    hypnotizer: true,
+    detective: true,
+    amur: true
   });
   const deckTitles = generator.createGameDeck().map(({ name }) => name);
 
-  expect(deckTitles.length).toEqual(16);
-  expect(countOccurrences(deckTitles, 'Citizen')).toEqual(16 - 10);
+  expect(deckTitles.length).toEqual(20);
+  expect(countOccurrences(deckTitles, 'Citizen')).toEqual(20 - 16);
   expect(countOccurrences(deckTitles, 'Mafia')).toEqual(3);
   expect(countOccurrences(deckTitles, 'Sheriff')).toEqual(1);
   expect(countOccurrences(deckTitles, 'Boss')).toEqual(1);
   expect(countOccurrences(deckTitles, 'Maniac')).toEqual(1);
   expect(countOccurrences(deckTitles, 'Putana')).toEqual(1);
   expect(countOccurrences(deckTitles, 'Doctor')).toEqual(1);
+  expect(countOccurrences(deckTitles, 'Widow')).toEqual(1);
   expect(countOccurrences(deckTitles, 'Psycho')).toEqual(1);
-  expect(countOccurrences(deckTitles, 'Gambler')).toEqual(1);
+  expect(countOccurrences(deckTitles, 'Advocate')).toEqual(1);
+  expect(countOccurrences(deckTitles, 'LuckyGuy')).toEqual(1);
+  expect(countOccurrences(deckTitles, 'Journalist')).toEqual(1);
+  expect(countOccurrences(deckTitles, 'Hypnotizer')).toEqual(1);
+  expect(countOccurrences(deckTitles, 'Detective')).toEqual(1);
+  expect(countOccurrences(deckTitles, 'Amur')).toEqual(1);
 });

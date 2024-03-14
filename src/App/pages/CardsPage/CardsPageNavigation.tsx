@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight } from '@mui/icons-material';
 import { FC } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 
-import { cardsPool } from '~/Cards/consts';
+import { cardsPool } from '~/Cards/data';
 import { getNext, getPrevious } from '~/Common';
 import { Role } from '~/GameSetup';
 

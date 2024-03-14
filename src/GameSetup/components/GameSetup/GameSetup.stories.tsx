@@ -1,26 +1,26 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { FC, useState } from 'react';
-
-import { GameSettings } from '~/GameSetup/types';
 
 import { GameSetup } from './GameSetup';
+import { GameSetupProps } from './GameSetup.types';
 
-const initGameSettings: GameSettings = {
-  players: 0,
-  mafia: 0
-};
-
-const GameSetupStory: FC = () => {
-  const [settings, setGameSettings] = useState<GameSettings>(initGameSettings);
-
-  return <GameSetup settings={settings} onChange={setGameSettings} />;
-};
+type Args = GameSetupProps;
 
 export default {
-  title: 'GameSetup',
-  component: GameSetupStory
-} as Meta;
+  title: 'GameSetup/GameSetup',
+  component: GameSetup,
+  args: {
+    settings: {
+      players: 10,
+      mafia: 2,
+      sheriff: true,
+      boss: true,
+      maniac: true,
+      putana: true,
+      doctor: true
+    }
+  }
+} as Meta<Args>;
 
-interface Args {}
+type Story = StoryObj<Args>;
 
-export const Default: StoryObj<Args> = {};
+export const Default: Story = {};

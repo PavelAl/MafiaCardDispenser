@@ -12,7 +12,7 @@ export const SwitchField: React.FC<SwitchFieldProps> = props => {
   const { id, label, checked, onChange } = props;
 
   return (
-    <FormControl display="flex" alignItems="center" justifyContent={'space-between'} width={100}>
+    <FormControl display="flex" alignItems="center" justifyContent={'space-between'} width={150}>
       <FormLabel htmlFor={id} mb="0">
         {label}
       </FormLabel>

@@ -2,7 +2,7 @@ import { Stack } from '@chakra-ui/react';
 import { FC } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-import { CardsGalleryPage } from '~/Cards/pages';
+import { CardsGalleryPage } from '~/Cards/modules';
 import { Role } from '~/GameSetup';
 
 import { CardsPageNavigation } from './CardsPageNavigation';

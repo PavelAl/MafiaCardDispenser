@@ -6,6 +6,12 @@ export type GameSettings = {
   maniac?: boolean;
   putana?: boolean;
   doctor?: boolean;
+  widow?: boolean;
   psycho?: boolean;
-  gambler?: boolean;
+  advocate?: boolean;
+  luckyGuy?: boolean;
+  journalist?: boolean;
+  hypnotizer?: boolean;
+  detective?: boolean;
+  amur?: boolean;
 };

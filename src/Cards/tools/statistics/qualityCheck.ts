@@ -13,6 +13,18 @@ export function checkThatMafiaSitsToClose(deck: Card[], gameSettings: GameSettin
   return toClose;
 }
 
+export function checkThatCitizensSitsToClose(deck: Card[], gameSettings: GameSettings) {
+  const mafiaCount = gameSettings.mafia + (gameSettings.boss ? 1 : 0);
+
+  if (mafiaCount < 3) return false;
+
+  const rolesDeck: Role[] = deck.map(card => card.role);
+
+  const toClose = findLongestRepeatedSequence(rolesDeck, 'citizen') >= 3;
+
+  return toClose;
+}
+
 export function findLongestRepeatedSequence<T>(arr: T[], accurance?: T) {
   const n = arr.length;
   let maxLength = 0;

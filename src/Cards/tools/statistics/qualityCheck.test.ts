@@ -1,3 +1,4 @@
+import { cardsPool } from '~/Cards/data';
 import { Card } from '~/Cards/types';
 import { GameSettings } from '~/GameSetup';
 
@@ -8,11 +9,11 @@ function makeTestDeck(length: number, mafiaIndexes: number[], bossIndex: number)
 
   for (let i = 0; i < length; i++) {
     if (i === bossIndex) {
-      result.push({ name: 'Boss', role: 'boss' });
+      result.push(cardsPool.boss);
     } else if (mafiaIndexes.includes(i)) {
-      result.push({ name: 'Mafia', role: 'mafia' });
+      result.push(cardsPool.mafia);
     } else {
-      result.push({ name: 'Citizen', role: 'citizen' });
+      result.push(cardsPool.citizen);
     }
   }
 

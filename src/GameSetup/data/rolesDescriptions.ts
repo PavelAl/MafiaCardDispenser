@@ -3,7 +3,7 @@ import { Role, RoleDescription } from '~/GameSetup/types';
 export const rolesDescriptions: Record<Role, RoleDescription> = {
   citizen: {
     role: 'citizen',
-    name: 'Мирный ',
+    name: 'Мирный',
     team: 'Мирные',
     action: 'Ночью не просыпается',
     specials: []
@@ -76,19 +76,5 @@ export const rolesDescriptions: Record<Role, RoleDescription> = {
       'Если заблокирована одна из мафий, то заблокирована вся команда',
       'Игрока, которого ночью посетила путана нельзя изгнать из города на следующий день'
     ]
-  },
-  gambler: {
-    role: 'gambler',
-    name: 'Шулер',
-    team: 'Одиночка',
-    action: '',
-    specials: []
-  },
-  psycho: {
-    role: 'psycho',
-    name: 'Псих',
-    team: 'Одиночка',
-    action: '',
-    specials: []
   }
 };
