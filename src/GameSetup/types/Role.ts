@@ -11,25 +11,35 @@ export const soloRoles: Role[] = [
   'journalist',
   'detective',
   'amur',
-  'hypnotizer'
+  'hypnotizer',
+  'godfather',
+  'rat',
+  'santa',
+  'snitch',
+  'thief'
 ];
 
 export type Role =
   | 'citizen'
   | 'mafia'
-  | 'sheriff'
-  | 'boss'
-  | 'maniac'
-  | 'putana'
-  | 'doctor'
-  | 'widow'
-  | 'psycho'
   | 'advocate'
-  | 'luckyGuy'
-  | 'journalist'
-  | 'detective'
   | 'amur'
-  | 'hypnotizer';
+  | 'boss'
+  | 'detective'
+  | 'doctor'
+  | 'godfather'
+  | 'hypnotizer'
+  | 'journalist'
+  | 'luckyGuy'
+  | 'maniac'
+  | 'psycho'
+  | 'putana'
+  | 'rat'
+  | 'santa'
+  | 'sheriff'
+  | 'snitch'
+  | 'thief'
+  | 'widow';
 
 export type RoleDescription = {
   role: Role;

@@ -15,6 +15,11 @@ const journalistCard: Card = { nameRu: 'Журналист', name: 'Journalist',
 const hypnotizerCard: Card = { nameRu: 'Гипнотизер', name: 'Hypnotizer', role: 'hypnotizer' };
 const detectiveCard: Card = { nameRu: 'Детектив', name: 'Detective', role: 'detective' };
 const amurCard: Card = { nameRu: 'Амур', name: 'Amur', role: 'amur' };
+const ratCard: Card = { nameRu: 'Крыса', name: 'Rat', role: 'rat' };
+const santaCard: Card = { nameRu: 'Санта', name: 'Santa', role: 'santa' };
+const snitchCard: Card = { nameRu: 'Стукач', name: 'Snitch', role: 'snitch' };
+const thiefCard: Card = { nameRu: 'Вор', name: 'Thief', role: 'thief' };
+const godfatherCard: Card = { nameRu: 'Крестный отец', name: 'Godfather', role: 'godfather' };
 
 export const cardsPool: CardsPool = {
   citizen: citizenCard,
@@ -31,5 +36,10 @@ export const cardsPool: CardsPool = {
   journalist: journalistCard,
   hypnotizer: hypnotizerCard,
   detective: detectiveCard,
-  amur: amurCard
+  amur: amurCard,
+  rat: ratCard,
+  santa: santaCard,
+  snitch: snitchCard,
+  thief: thiefCard,
+  godfather: godfatherCard
 };

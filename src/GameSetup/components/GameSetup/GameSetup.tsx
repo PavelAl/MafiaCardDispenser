@@ -1,4 +1,4 @@
-import { Stack, Text } from '@chakra-ui/react';
+import { Grid, Stack, Text } from '@chakra-ui/react';
 import { FC } from 'react';
 
 import { MobileNumberInput } from '~/Common';
@@ -32,9 +32,15 @@ export const GameSetup: FC<GameSetupProps> = props => {
           onChange={value => onChange?.({ ...settings, mafia: value })}
         />
 
-        {soloRoles.map(role => (
-          <RoleSwitchField key={role} role={role} />
-        ))}
+        <Grid templateColumns="repeat(2, 1fr)" columnGap="12" gap={6}>
+          {soloRoles.slice(0, soloRoles.length / 2).map(role => (
+            <RoleSwitchField key={role} role={role} />
+          ))}
+
+          {soloRoles.slice(soloRoles.length / 2, soloRoles.length).map(role => (
+            <RoleSwitchField key={role} role={role} />
+          ))}
+        </Grid>
       </Stack>
     </GameSetupContext.Provider>
   );
