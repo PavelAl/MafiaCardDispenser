@@ -1,4 +1,4 @@
-import { FormControl, FormLabel, Switch } from '@chakra-ui/react';
+import { Switch, Field } from '@chakra-ui/react';
 import React from 'react';
 
 interface SwitchFieldProps {
@@ -10,19 +10,28 @@ interface SwitchFieldProps {
 
 export const SwitchField: React.FC<SwitchFieldProps> = props => {
   const { id, label, checked, onChange } = props;
+  console.log(checked);
 
   return (
-    <FormControl display="flex" alignItems="center" justifyContent={'space-between'} width={150}>
-      <FormLabel htmlFor={id} mb="0">
-        {label}
-      </FormLabel>
-
-      <Switch
+    <Field.Root display="flex" alignItems="center" justifyContent={'space-between'} width={150}>
+      <Switch.Root
         id={id}
         checked={checked}
         defaultChecked={checked}
-        onChange={e => onChange?.(e.target.checked)}
-      />
-    </FormControl>
+        onCheckedChange={e => {
+          console.log(e);
+
+          return onChange?.(e.checked);
+        }}
+      >
+        <Switch.HiddenInput />
+
+        <Switch.Label>{label}</Switch.Label>
+
+        <Switch.Control>
+          <Switch.Thumb />
+        </Switch.Control>
+      </Switch.Root>
+    </Field.Root>
   );
 };

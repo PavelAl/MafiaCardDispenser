@@ -31,12 +31,9 @@ export const CardsPageNavigation: FC = () => {
   return (
     <HStack justifyContent={'space-between'}>
       {role && (
-        <Button
-          leftIcon={<ChevronLeft />}
-          width={120}
-          paddingLeft={0}
-          onClick={navigateToPreviousCard}
-        >
+        <Button width={120} paddingLeft={0} onClick={navigateToPreviousCard}>
+          <ChevronLeft />
+
           {`${cardsPool[prevRole].name}`}
         </Button>
       )}
@@ -46,13 +43,10 @@ export const CardsPageNavigation: FC = () => {
       </Link>
 
       {role && (
-        <Button
-          rightIcon={<ChevronRight />}
-          width={120}
-          paddingRight={0}
-          onClick={navigateToNextCard}
-        >
+        <Button width={120} paddingRight={0} onClick={navigateToNextCard}>
           {`${cardsPool[nextRole].name}`}
+
+          <ChevronRight />
         </Button>
       )}
     </HStack>

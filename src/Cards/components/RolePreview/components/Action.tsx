@@ -8,7 +8,7 @@ export const Action: FC<{ action: string }> = ({ action }) => {
     <Stack gap={1}>
       <SectionTitle>Действие ночью</SectionTitle>
 
-      <Text fontSize="14" fontWeight={400} align={'center'}>
+      <Text fontSize="14" fontWeight={400} textAlign={'center'}>
         {action}
       </Text>
     </Stack>

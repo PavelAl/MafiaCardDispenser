@@ -23,7 +23,7 @@ export const CardsDealingToolbar: FC<ToolbarProps> = props => {
         </Button>
       )}
 
-      <Text fontSize="1xl" fontWeight={600} align={'center'}>
+      <Text fontSize="1xl" fontWeight={600} textAlign={'center'}>
         Player {currentIndex + 1}
       </Text>
 

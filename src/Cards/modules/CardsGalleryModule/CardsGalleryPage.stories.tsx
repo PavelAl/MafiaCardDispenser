@@ -16,6 +16,4 @@ export default {
   }
 } as Meta<{ selectedRole: Role }>;
 
-interface Args {}
-
-export const Default: StoryObj<Args> = {};
+export const Default: StoryObj = {};

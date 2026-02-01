@@ -18,6 +18,4 @@ export default {
   }
 } as Meta<CardsDealingModuleProps>;
 
-interface Args {}
-
-export const Default: StoryObj<Args> = {};
+export const Default: StoryObj = {};

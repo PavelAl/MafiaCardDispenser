@@ -1,13 +1,10 @@
-import { ChakraProvider } from '@chakra-ui/react';
-import type { Preview } from '@storybook/react';
+import { ChakraProvider, defaultSystem } from '@chakra-ui/react';
+import type { Preview } from '@storybook/react-vite';
 import React from 'react';
 
 const preview: Preview = {
   parameters: {
-    backgrounds: {
-      default: 'light'
-    },
-    actions: { argTypesRegex: '^on[A-Z].*' },
+    backgrounds: {},
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -15,13 +12,20 @@ const preview: Preview = {
       }
     }
   },
+
   decorators: [
     Story => (
-      <ChakraProvider>
+      <ChakraProvider value={defaultSystem}>
         <Story />
       </ChakraProvider>
     )
-  ]
+  ],
+
+  initialGlobals: {
+    backgrounds: {
+      value: 'light'
+    }
+  }
 };
 
 export default preview;

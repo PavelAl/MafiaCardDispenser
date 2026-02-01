@@ -76,5 +76,109 @@ export const rolesDescriptions: Record<Role, RoleDescription> = {
       'Если заблокирована одна из мафий, то заблокирована вся команда',
       'Игрока, которого ночью посетила путана нельзя изгнать из города на следующий день'
     ]
+  },
+
+  widow: {
+    role: 'widow',
+    name: 'Вдова',
+    team: 'Мирные',
+    action: 'Не просыпается ночью',
+    specials: []
+  },
+
+  psycho: {
+    role: 'psycho',
+    name: 'Психопат',
+    team: 'Мирные',
+    action: 'Не просыпается ночью',
+    specials: []
+  },
+
+  advocate: {
+    role: 'advocate',
+    name: 'Адвокат',
+    team: 'Мирные',
+    action: 'Не просыпается ночью',
+    specials: []
+  },
+
+  luckyGuy: {
+    role: 'luckyGuy',
+    name: 'Везунчик',
+    team: 'Мирные',
+    action: 'Не просыпается ночью',
+    specials: []
+  },
+
+  journalist: {
+    role: 'journalist',
+    name: 'Журналист',
+    team: 'Мирные',
+    action: 'Не просыпается ночью',
+    specials: []
+  },
+
+  hypnotizer: {
+    role: 'hypnotizer',
+    name: 'Гипнотизер',
+    team: 'Мафия',
+    action: 'Просыпается ночью с командой мафии',
+    specials: []
+  },
+
+  detective: {
+    role: 'detective',
+    name: 'Детектив',
+    team: 'Мирные',
+    action: 'Просыпается ночью',
+    specials: []
+  },
+
+  amur: {
+    role: 'amur',
+    name: 'Амур',
+    team: 'Мирные',
+    action: 'Не просыпается ночью',
+    specials: []
+  },
+
+  godfather: {
+    role: 'godfather',
+    name: 'Крестный отец',
+    team: 'Мафия',
+    action: 'Просыпается ночью с командой мафии',
+    specials: []
+  },
+
+  rat: {
+    role: 'rat',
+    name: 'Крыса',
+    team: 'Мирные',
+    action: 'Не просыпается ночью',
+    specials: []
+  },
+
+  santa: {
+    role: 'santa',
+    name: 'Санта',
+    team: 'Мирные',
+    action: 'Не просыпается ночью',
+    specials: []
+  },
+
+  snitch: {
+    role: 'snitch',
+    name: 'Стукач',
+    team: 'Мирные',
+    action: 'Не просыпается ночью',
+    specials: []
+  },
+
+  thief: {
+    role: 'thief',
+    name: 'Вор',
+    team: 'Мирные',
+    action: 'Не просыпается ночью',
+    specials: []
   }
 };

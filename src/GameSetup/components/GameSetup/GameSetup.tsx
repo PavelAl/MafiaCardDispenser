@@ -34,11 +34,11 @@ export const GameSetup: FC<GameSetupProps> = props => {
 
         <Grid templateColumns="repeat(2, 1fr)" columnGap="12" gap={6}>
           {soloRoles.slice(0, soloRoles.length / 2).map(role => (
-            <RoleSwitchField key={role} role={role} />
+            <RoleSwitchField key={role} role={role} settings={settings} />
           ))}
 
           {soloRoles.slice(soloRoles.length / 2, soloRoles.length).map(role => (
-            <RoleSwitchField key={role} role={role} />
+            <RoleSwitchField key={role} role={role} settings={settings} />
           ))}
         </Grid>
       </Stack>

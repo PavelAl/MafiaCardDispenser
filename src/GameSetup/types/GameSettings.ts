@@ -14,4 +14,9 @@ export type GameSettings = {
   hypnotizer?: boolean;
   detective?: boolean;
   amur?: boolean;
+  godfather?: boolean;
+  rat?: boolean;
+  santa?: boolean;
+  snitch?: boolean;
+  thief?: boolean;
 };

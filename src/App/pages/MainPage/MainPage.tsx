@@ -27,7 +27,7 @@ export function MainPage() {
       {mode === 'setup' && <MainPageNavigation />}
 
       {mode === 'setup' && (
-        <Stack spacing={8} alignItems={'center'}>
+        <Stack gap={8} alignItems={'center'}>
           <GameSetup settings={settings} canEditPlayers={true} onChange={setGameSettings} />
 
           <Button colorScheme="blue" onClick={setToPlayersGetReady}>

@@ -16,7 +16,7 @@ export const TeamGallery: FC<TeamGalleryProps> = props => {
 
   return (
     <Stack gap={3} alignItems={'flex-start'}>
-      <Text fontSize="24" fontWeight={600} align={'center'}>
+      <Text fontSize="24" fontWeight={600} textAlign={'center'}>
         {title}
       </Text>
 

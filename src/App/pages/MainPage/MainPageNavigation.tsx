@@ -9,7 +9,7 @@ export const MainPageNavigation: FC = () => {
         Cards list
       </Link>
 
-      <Text fontSize="3xl" fontWeight={600} align={'center'}>
+      <Text fontSize="3xl" fontWeight={600} textAlign={'center'}>
         Game settings
       </Text>
 

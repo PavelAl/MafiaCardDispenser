@@ -13,23 +13,33 @@ export function simulateNumberOfGames(gameSettings: GameSettings, numberOfGames:
   const result: Statistic[] = [];
 
   for (let i = 0; i < gameSettings.players; i++) {
-    let playerResult: Statistic = {
+    const playerResult: Statistic = {
       citizen: 0,
       mafia: 0,
       sheriff: 0,
       boss: 0,
       doctor: 0,
       maniac: 0,
-      putana: 0
+      putana: 0,
+      widow: 0,
+      psycho: 0,
+      advocate: 0,
+      luckyGuy: 0,
+      journalist: 0,
+      hypnotizer: 0,
+      detective: 0,
+      amur: 0,
+      godfather: 0,
+      rat: 0,
+      santa: 0,
+      snitch: 0,
+      thief: 0
     };
 
     for (const deck of decks) {
       const role = deck[i].role;
 
-      playerResult = {
-        ...playerResult,
-        [role]: (playerResult[role] ?? 0) + 1
-      };
+      playerResult[role] = (playerResult[role] ?? 0) + 1;
     }
 
     result.push(playerResult);

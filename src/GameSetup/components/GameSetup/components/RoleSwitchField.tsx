@@ -10,13 +10,18 @@ export const RoleSwitchField: FC<{ role: Role }> = ({ role }) => {
   const { settings = { players: 0, mafia: 0 }, onChange } = useContext(GameSetupContext);
 
   const card = cardsPool[role];
+  console.log(settings);
 
   return (
     <SwitchField
       id={role}
       label={card.nameRu}
       checked={Boolean(settings[role as keyof GameSettings])}
-      onChange={value => onChange?.({ ...settings, [role]: value })}
+      onChange={value => {
+        console.log({ value, onChange });
+
+        return onChange?.({ ...settings, [role]: value });
+      }}
     />
   );
 };

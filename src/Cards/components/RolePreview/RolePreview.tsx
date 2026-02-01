@@ -13,7 +13,7 @@ export const RolePreview: FC<RolePreviewProps> = props => {
     <Stack gap={3} alignItems={'center'}>
       <RoleCard role={role} />
 
-      <Text fontSize="20" fontWeight={600} align={'center'}>
+      <Text fontSize="20" fontWeight={600} textAlign={'center'}>
         {name}
       </Text>
 

@@ -1,4 +1,4 @@
-import { FormControl, FormLabel, Button, HStack, Input, useNumberInput } from '@chakra-ui/react';
+import { Button, HStack, Field, NumberInput } from '@chakra-ui/react';
 import { Add, Remove } from '@mui/icons-material';
 import { FC } from 'react';
 
@@ -12,31 +12,35 @@ type Props = {
 
 export const MobileNumberInput: FC<Props> = props => {
   const { label, value, min, max, onChange } = props;
-  const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } = useNumberInput({
-    step: 1,
-    min,
-    max,
-    value,
-    onChange: (valueAsString: string, valueAsNumber: number) => onChange?.(valueAsNumber)
-  });
-
-  const inc = getIncrementButtonProps();
-  const dec = getDecrementButtonProps();
-  const input = getInputProps();
 
   return (
     <HStack maxW="200px" alignItems={'flex-end'} gap={4}>
-      <Button colorScheme="blue" variant="outline" {...dec}>
+      <Button
+        colorScheme="blue"
+        variant="outline"
+        onClick={() => onChange?.(Math.max(min ?? 0, (value ?? 0) - 1))}
+      >
         <Remove />
       </Button>
 
-      <FormControl>
-        <FormLabel>{label}</FormLabel>
+      <Field.Root>
+        <NumberInput.Root
+          min={min}
+          max={max}
+          value={value?.toString()}
+          onValueChange={e => onChange?.(Number(e.value))}
+        >
+          <NumberInput.Label>{label}</NumberInput.Label>
 
-        <Input {...input} />
-      </FormControl>
+          <NumberInput.Input />
+        </NumberInput.Root>
+      </Field.Root>
 
-      <Button colorScheme="blue" variant="outline" {...inc}>
+      <Button
+        colorScheme="blue"
+        variant="outline"
+        onClick={() => onChange?.(Math.min(max ?? Infinity, (value ?? 0) + 1))}
+      >
         <Add />
       </Button>
     </HStack>
