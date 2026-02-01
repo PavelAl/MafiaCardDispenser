@@ -20,6 +20,9 @@ const santaCard: Card = { nameRu: 'Санта', name: 'Santa', role: 'santa' };
 const snitchCard: Card = { nameRu: 'Стукач', name: 'Snitch', role: 'snitch' };
 const thiefCard: Card = { nameRu: 'Вор', name: 'Thief', role: 'thief' };
 const godfatherCard: Card = { nameRu: 'Крестный отец', name: 'Godfather', role: 'godfather' };
+const bonyCard: Card = { nameRu: 'Бони', name: 'Bony', role: 'bony' };
+const klideCard: Card = { nameRu: 'Клайд', name: 'Klide', role: 'klide' };
+const mirrorCard: Card = { nameRu: 'Зеркало', name: 'Mirror', role: 'mirror' };
 
 export const cardsPool: CardsPool = {
   citizen: citizenCard,
@@ -41,5 +44,8 @@ export const cardsPool: CardsPool = {
   santa: santaCard,
   snitch: snitchCard,
   thief: thiefCard,
-  godfather: godfatherCard
+  godfather: godfatherCard,
+  bony: bonyCard,
+  klide: klideCard,
+  mirror: mirrorCard
 };

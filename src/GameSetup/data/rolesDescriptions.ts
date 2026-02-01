@@ -180,5 +180,29 @@ export const rolesDescriptions: Record<Role, RoleDescription> = {
     team: 'Мирные',
     action: 'Не просыпается ночью',
     specials: []
+  },
+
+  bony: {
+    role: 'bony',
+    name: 'Бони',
+    team: 'Мирные',
+    action: 'Не просыпается ночью',
+    specials: []
+  },
+
+  klide: {
+    role: 'klide',
+    name: 'Клайд',
+    team: 'Мирные',
+    action: 'Не просыпается ночью',
+    specials: []
+  },
+
+  mirror: {
+    role: 'mirror',
+    name: 'Зеркало',
+    team: 'Мирные',
+    action: 'Не просыпается ночью',
+    specials: []
   }
 };

@@ -33,7 +33,10 @@ export function simulateNumberOfGames(gameSettings: GameSettings, numberOfGames:
       rat: 0,
       santa: 0,
       snitch: 0,
-      thief: 0
+      thief: 0,
+      bony: 0,
+      klide: 0,
+      mirror: 0
     };
 
     for (const deck of decks) {

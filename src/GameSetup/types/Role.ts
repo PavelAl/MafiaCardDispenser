@@ -16,7 +16,10 @@ export const soloRoles: Role[] = [
   'rat',
   'santa',
   'snitch',
-  'thief'
+  'thief',
+  'bony',
+  'klide',
+  'mirror'
 ];
 
 export type Role =
@@ -24,14 +27,17 @@ export type Role =
   | 'mafia'
   | 'advocate'
   | 'amur'
+  | 'bony'
   | 'boss'
   | 'detective'
   | 'doctor'
   | 'godfather'
   | 'hypnotizer'
   | 'journalist'
+  | 'klide'
   | 'luckyGuy'
   | 'maniac'
+  | 'mirror'
   | 'psycho'
   | 'putana'
   | 'rat'

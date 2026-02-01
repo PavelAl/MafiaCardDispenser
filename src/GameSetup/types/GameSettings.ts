@@ -19,4 +19,7 @@ export type GameSettings = {
   santa?: boolean;
   snitch?: boolean;
   thief?: boolean;
+  bony?: boolean;
+  klide?: boolean;
+  mirror?: boolean;
 };

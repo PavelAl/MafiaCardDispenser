@@ -10,7 +10,6 @@ interface SwitchFieldProps {
 
 export const SwitchField: React.FC<SwitchFieldProps> = props => {
   const { id, label, checked, onChange } = props;
-  console.log(checked);
 
   return (
     <Field.Root display="flex" alignItems="center" justifyContent={'space-between'} width={150}>
@@ -18,11 +17,7 @@ export const SwitchField: React.FC<SwitchFieldProps> = props => {
         id={id}
         checked={checked}
         defaultChecked={checked}
-        onCheckedChange={e => {
-          console.log(e);
-
-          return onChange?.(e.checked);
-        }}
+        onCheckedChange={e => onChange?.(e.checked)}
       >
         <Switch.HiddenInput />
 
